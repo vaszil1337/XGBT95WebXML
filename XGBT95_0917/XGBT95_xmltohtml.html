@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Órarend</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f8f8;
+            margin: 40px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px 8px;
+            text-align: left;
+        }
+        th {
+            background: #0077cc;
+            color: #fff;
+        }
+        .elmelet {
+            background: #e3f2fd;
+        }
+        .gyakorlat {
+            background: #ffe0b2;
+        }
+    </style>
+</head>
+<body>
+    <h1>XGBT95 Órarend</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Típus</th>
+                <th>Tantárgy</th>
+                <th>Nap</th>
+                <th>Időpont</th>
+                <th>Helyszín</th>
+                <th>Oktató</th>
+                <th>Szak</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="elmelet">
+                <td>1</td>
+                <td>Elmélet</td>
+                <td>Elektrotechnika-elektronika</td>
+                <td>hétfő</td>
+                <td>8:00 - 9:30</td>
+                <td>E/3</td>
+                <td>Szabó Norbert István</td>
+                <td>mérnökinformatikus</td>
+            </tr>
+            <tr class="elmelet">
+                <td>2</td>
+                <td>Elmélet</td>
+                <td>Web technológiák 1</td>
+                <td>hétfő</td>
+                <td>10:00 - 11:30</td>
+                <td>E/5</td>
+                <td>Dr. Agárdi Anita</td>
+                <td>mérnökinformatikus</td>
+            </tr>
+            <tr class="gyakorlat">
+                <td>3</td>
+                <td>Gyakorlat</td>
+                <td>Angol műszaki szaknyelv 1</td>
+                <td>hétfő</td>
+                <td>12:00 - 13:30</td>
+                <td>L101</td>
+                <td>Dobronyi Eszter</td>
+                <td>mérnökinformatikus</td>
+            </tr>
+            <tr class="gyakorlat">
+                <td>2</td>
+                <td>Gyakorlat</td>
+                <td>Web technológiák 1</td>
+                <td>hétfő</td>
+                <td>14:00 - 15:30</td>
+                <td>L101</td>
+                <td>Dr. Agárdi Anita</td>
+                <td>mérnökinformatikus</td>
+            </tr>
+            <tr class="elmelet">
+                <td>5</td>
+                <td>Elmélet</td>
+                <td>Mobil programozási alapok</td>
+                <td>hétfő</td>
+                <td>16:00 - 17:30</td>
+                <td>L101</td>
+                <td>Dr. Agárdi Anita</td>
+                <td>mérnökinformatikus</td>
+            </tr>
+            <tr class="gyakorlat">
+                <td>5</td>
+                <td>Gyakorlat</td>
+                <td>Mobil programozási alapok</td>
+                <td>hétfő</td>
+                <td>18:00 - 19:30</td>
+                <td>L101</td>
+                <td>Dr. Agárdi Anita</td>
+                <td>mérnökinformatikus</td>
+            </tr>
+            <tr class="elmelet">
+                <td>6</td>
+                <td>Elmélet</td>
+                <td>Mesterséges intelligencia alapok</td>
+                <td>kedd</td>
+                <td>10:00 - 11:30</td>
+                <td>E/32</td>
+                <td>Kunné Dr. Tamás Judit</td>
+                <td>mérnökinformatikus</td>
+            </tr>
+            <tr class="elmelet">
+                <td>9</td>
+                <td>Elmélet</td>
+                <td>Valószínűségszámítás és matematikai statisztika</td>
+                <td>kedd</td>
+                <td>10:00 - 11:30</td>
+                <td>E/5</td>
+                <td>Dr. Glavositcs Tamás</td>
+                <td>mérnökinformatikus</td>
+            </tr>
+            <tr class="gyakorlat">
+                <td>6</td>
+                <td>Gyakorlat</td>
+                <td>Mesterséges intelligencia alapok</td>
+                <td>kedd</td>
+                <td>12:00 - 13:30</td>
+                <td>E/32</td>
+                <td>Fazekas Levente Áron</td>
+                <td>mérnökinformatikus</td>
+            </tr>
+            <tr class="gyakorlat">
+                <td>1</td>
+                <td>Gyakorlat</td>
+                <td>Elektrotechnika-elektronika</td>
+                <td>kedd</td>
+                <td>14:00 - 15:30</td>
+                <td>A3/313</td>
+                <td>Dr. Kozsely Gábor</td>
+                <td>mérnökinformatikus</td>
+            </tr>
+            <tr class="gyakorlat">
+                <td>7</td>
+                <td>Gyakorlat</td>
+                <td>UNIX rendszergazda</td>
+                <td>kedd</td>
+                <td>17:00 - 18:30</td>
+                <td>L101</td>
+                <td>Dr. Baksa Attila</td>
+                <td>mérnökinformatikus</td>
+            </tr>
+            <tr class="elmelet">
+                <td>7</td>
+                <td>Elmélet</td>
+                <td>UNIX rendszergazda</td>
+                <td>szerda</td>
+                <td>8:00 - 9:30</td>
+                <td>L101</td>
+                <td>Dr. Baksa Attila</td>
+                <td>mérnökinformatikus</td>
+            </tr>
+            <tr class="elmelet">
+                <td>8</td>
+                <td>Elmélet</td>
+                <td>Webes adatkezelő környezetek</td>
+                <td>szerda</td>
+                <td>8:00 - 9:30</td>
+                <td>T050</td>
+                <td>Dr. Kovács László József</td>
+                <td>mérnökinformatikus</td>
+            </tr>
+            <tr class="gyakorlat">
+                <td>8</td>
+                <td>Gyakorlat</td>
+                <td>Webes adatkezelő környezetek</td>
+                <td>szerda</td>
+                <td>10:00 - 11:30</td>
+                <td>L103</td>
+                <td>Dr. Bednarik László</td>
+                <td>mérnökinformatikus</td>
+            </tr>
+            <tr class="gyakorlat">
+                <td>9</td>
+                <td>Gyakorlat</td>
+                <td>Valószínűségszámítás és matematikai statisztika</td>
+                <td>szerda</td>
+                <td>14:00 - 15:30</td>
+                <td>T050</td>
+                <td>Dr. Nagy Noémi</td>
+                <td>mérnökinformatikus</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

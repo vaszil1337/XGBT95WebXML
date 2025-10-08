@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+  <xs:annotation>
+    <xs:documentation>
+      XSD for XGBT95_orarend XML (órarend).
+      - "ora" elems have an @id and @tipus (elmélet|gyakorlat).
+      - "idopont/tol" and "idopont/ig" use 3 or 4 digit 24h times like 800, 0930, 1400, 1530.
+      - nap is one of the Hungarian weekday names.
+    </xs:documentation>
+  </xs:annotation>
+
+  <!-- root -->
+  <xs:element name="XGBT95_orarend">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ora" type="OraType" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- ora -->
+  <xs:complexType name="OraType">
+    <xs:sequence>
+      <xs:element name="targy" type="xs:string"/>
+      <xs:element name="idopont" type="IdopontType"/>
+      <xs:element name="helyszin" type="xs:string"/>
+      <xs:element name="oktato" type="xs:string"/>
+      <xs:element name="szak" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="required"/>
+    <xs:attribute name="tipus" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="elmélet"/>
+          <xs:enumeration value="gyakorlat"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+
+  <!-- idopont -->
+  <xs:complexType name="IdopontType">
+    <xs:sequence>
+      <xs:element name="nap">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="hétfő"/>
+            <xs:enumeration value="kedd"/>
+            <xs:enumeration value="szerda"/>
+            <xs:enumeration value="csütörtök"/>
+            <xs:enumeration value="péntek"/>
+            <xs:enumeration value="szombat"/>
+            <xs:enumeration value="vasárnap"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="tol">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <!-- Accept 3 or 4 digit 24-hour times like 800, 0930, 1400, 2359 -->
+            <xs:pattern value="([0-1]?\d|2[0-3])[0-5]\d"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ig">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="([0-1]?\d|2[0-3])[0-5]\d"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

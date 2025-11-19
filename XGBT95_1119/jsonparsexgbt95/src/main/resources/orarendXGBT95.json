@@ -1,0 +1,201 @@
+{
+  "XGBT95_orarend": {
+    "ora": [
+      {
+        "id": "1",
+        "tipus": "elmélet",
+        "targy": "Elektrotechnika-elektronika",
+        "idopont": {
+          "nap": "hétfő",
+          "tol": "8:00",
+          "ig": "9:30"
+        },
+        "helyszin": "E/3",
+        "oktato": "Szabó Norbert István",
+        "szak": "mérnökinformatikus"
+      },
+      {
+        "id": "2",
+        "tipus": "elmélet",
+        "targy": "Web technológiák 1",
+        "idopont": {
+          "nap": "hétfő",
+          "tol": "10:00",
+          "ig": "11:30"
+        },
+        "helyszin": "E/5",
+        "oktato": "Dr. Agárdi Anita",
+        "szak": "mérnökinformatikus"
+      },
+      {
+        "id": "3",
+        "tipus": "gyakorlat",
+        "targy": "Angol műszaki szaknyelv 1",
+        "idopont": {
+          "nap": "hétfő",
+          "tol": "12:00",
+          "ig": "13:30"
+        },
+        "helyszin": "L101",
+        "oktato": "Dobronyi Eszter",
+        "szak": "mérnökinformatikus"
+      },
+      {
+        "id": "2",
+        "tipus": "gyakorlat",
+        "targy": "Web technológiák 1",
+        "idopont": {
+          "nap": "hétfő",
+          "tol": "14:00",
+          "ig": "15:30"
+        },
+        "helyszin": "L101",
+        "oktato": "Dr. Agárdi Anita",
+        "szak": "mérnökinformatikus"
+      },
+      {
+        "id": "5",
+        "tipus": "elmélet",
+        "targy": "Mobil programozási alapok",
+        "idopont": {
+          "nap": "hétfő",
+          "tol": "16:00",
+          "ig": "17:30"
+        },
+        "helyszin": "L101",
+        "oktato": "Dr. Agárdi Anita",
+        "szak": "mérnökinformatikus"
+      },
+      {
+        "id": "5",
+        "tipus": "gyakorlat",
+        "targy": "Mobil programozási alapok",
+        "idopont": {
+          "nap": "hétfő",
+          "tol": "18:00",
+          "ig": "19:30"
+        },
+        "helyszin": "L101",
+        "oktato": "Dr. Agárdi Anita",
+        "szak": "mérnökinformatikus"
+      },
+      {
+        "id": "6",
+        "tipus": "elmélet",
+        "targy": "Mesterséges intelligencia alapok",
+        "idopont": {
+          "nap": "kedd",
+          "tol": "10:00",
+          "ig": "11:30"
+        },
+        "helyszin": "E/32",
+        "oktato": "Kunné Dr. Tamás Judit",
+        "szak": "mérnökinformatikus"
+      },
+      {
+        "id": "9",
+        "tipus": "elmélet",
+        "targy": "Valószínűségszámítás és matematikai statisztika",
+        "idopont": {
+          "nap": "kedd",
+          "tol": "14:00",
+          "ig": "15:30"
+        },
+        "helyszin": "T050",
+        "oktato": "Dr. Glavositcs Tamás",
+        "szak": "mérnökinformatikus"
+      },
+      {
+        "id": "6",
+        "tipus": "gyakorlat",
+        "targy": "Mesterséges intelligencia alapok",
+        "idopont": {
+          "nap": "kedd",
+          "tol": "12:00",
+          "ig": "13:30"
+        },
+        "helyszin": "E/32",
+        "oktato": "Fazekas Levente Áron",
+        "szak": "mérnökinformatikus"
+      },
+      {
+        "id": "1",
+        "tipus": "gyakorlat",
+        "targy": "Elektrotechnika-elektronika",
+        "idopont": {
+          "nap": "kedd",
+          "tol": "14:00",
+          "ig": "15:30"
+        },
+        "helyszin": "A3/313",
+        "oktato": "Dr. Kozsely Gábor",
+        "szak": "mérnökinformatikus"
+      },
+      {
+        "id": "7",
+        "tipus": "gyakorlat",
+        "targy": "UNIX rendszergazda",
+        "idopont": {
+          "nap": "kedd",
+          "tol": "17:00",
+          "ig": "18:30"
+        },
+        "helyszin": "L101",
+        "oktato": "Dr. Baksa Attila",
+        "szak": "mérnökinformatikus"
+      },
+      {
+        "id": "7",
+        "tipus": "elmélet",
+        "targy": "UNIX rendszergazda",
+        "idopont": {
+          "nap": "szerda",
+          "tol": "8:00",
+          "ig": "9:30"
+        },
+        "helyszin": "L101",
+        "oktato": "Dr. Baksa Attila",
+        "szak": "mérnökinformatikus"
+      },
+      {
+        "id": "8",
+        "tipus": "elmélet",
+        "targy": "Webes adatkezelő környezetek",
+        "idopont": {
+          "nap": "szerda",
+          "tol": "8:00",
+          "ig": "9:30"
+        },
+        "helyszin": "T050",
+        "oktato": "Dr. Kovács László József",
+        "szak": "mérnökinformatikus"
+      },
+      {
+        "id": "8",
+        "tipus": "gyakorlat",
+        "targy": "Webes adatkezelő környezetek",
+        "idopont": {
+          "nap": "szerda",
+          "tol": "10:00",
+          "ig": "11:30"
+        },
+        "helyszin": "L103",
+        "oktato": "Dr. Bednarik László",
+        "szak": "mérnökinformatikus"
+      },
+      {
+        "id": "9",
+        "tipus": "gyakorlat",
+        "targy": "Valószínűségszámítás és matematikai statisztika",
+        "idopont": {
+          "nap": "szerda",
+          "tol": "14:00",
+          "ig": "15:30"
+        },
+        "helyszin": "T050",
+        "oktato": "Dr. Nagy Noémi",
+        "szak": "mérnökinformatikus"
+      }
+    ]
+  }
+}

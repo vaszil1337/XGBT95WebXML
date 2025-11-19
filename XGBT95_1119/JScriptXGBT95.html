@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Neptunkód XGBT95 2025</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+
+        .block {
+            margin-bottom: 18px;
+            padding: 12px;
+            border: 1px solid #333;
+            border-radius: 6px;
+            width: 380px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>XGBT95 Órarend 2025</h2>
+    <button onclick="loadJSON()">Órarend betöltése</button>
+    <div id="output"></div>
+    <script>
+        function loadJSON() {
+            fetch("orarendXGBT95.json")
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById("output");
+                    container.innerHTML = "";
+
+                    const orarend = data.XGBT95_orarend.ora;
+
+                    orarend.forEach(lesson => {
+                        const time = lesson.idopont;
+
+                        const div = document.createElement("div");
+                        div.className = "block";
+
+                        div.innerHTML = `
+                        <strong>Tárgy:</strong> ${lesson.targy}<br>
+                        <strong>Helyszín:</strong> ${lesson.helyszin}<br>
+                        <strong>Oktató:</strong> ${lesson.oktato}<br>
+                        <strong>Szak:</strong> ${lesson.szak}<br>
+                        <strong>Nap:</strong> ${time.nap}<br>
+                        <strong>Idő:</strong> ${time.tol} - ${time.ig}
+                    `;
+
+                        container.appendChild(div);
+                    });
+                })
+                .catch(error => {
+                    console.error("Hiba a JSON beolvasásakor:", error);
+                });
+        }
+    </script>
+</body>
+</html>

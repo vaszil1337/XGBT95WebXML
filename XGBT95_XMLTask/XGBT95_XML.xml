@@ -1,0 +1,125 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<!-- ============================== -->
+<!-- Szülő elem -->
+<!-- ============================== -->
+<szallasfoglalas
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="XGBT95_XMLSchema.xsd">
+
+    <!-- Szolgáltatások -->
+
+    <!-- Szolgáltatás 1 -->
+    <szolgaltatas szolg_id="1" h_id="1">
+        <nev>Reggeli</nev>
+        <ar>3500</ar>
+    </szolgaltatas>
+
+    <!-- Szolgáltatás 2 -->
+    <szolgaltatas szolg_id="2" h_id="2">
+        <nev>Wellness belépő</nev>
+        <ar>8000</ar>
+    </szolgaltatas>
+
+
+    <!-- Hotelek -->
+
+    <!-- Hotel 1 -->
+    <hotel h_id="1">
+        <nev>Napfény Hotel</nev>
+        <varos>Budapest</varos>
+        <telefonszam>+36 1 555 1122</telefonszam>
+        <csillag>4</csillag>
+    </hotel>
+
+    <!-- Hotel 2 -->
+    <hotel h_id="2">
+        <nev>Aranypart Resort</nev>
+        <varos>Siófok</varos>
+        <telefonszam>+36 84 333 777</telefonszam>
+        <csillag>5</csillag>
+    </hotel>
+
+
+    <!-- Szobák -->
+
+    <!-- Szoba 1 -->
+    <szoba s_id="1" h_id="1" f_id="1">
+        <ferohely>2</ferohely>
+        <ar>18000</ar>
+    </szoba>
+
+    <!-- Szoba 2 -->
+    <szoba s_id="2" h_id="2" f_id="2">
+        <ferohely>3</ferohely>
+        <ar>26000</ar>
+    </szoba>
+
+
+    <!-- Szoba-vendég kapcsolatok -->
+
+    <!-- Kapcsolat 1 -->
+    <szoba-vendeg s_id="1" v_id="1" />
+
+    <!-- Kapcsolat 2 -->
+    <szoba-vendeg s_id="2" v_id="2" />
+
+
+    <!-- Vendégek -->
+
+    <!-- Vendég 1 -->
+    <vendeg v_id="1">
+        <nev>Nagy Péter</nev>
+        <email>peter.nagy@email.hu</email>
+        <telefon>06201234567</telefon>
+    </vendeg>
+
+    <!-- Vendég 2 -->
+    <vendeg v_id="2">
+        <nev>Kovács Anna</nev>
+        <email>anna.kovacs@email.hu</email>
+        <telefon>06203334455</telefon>
+    </vendeg>
+
+
+    <!-- Vendég profilok -->
+
+    <!-- Vendég profil 1 -->
+    <vendeg_profil vp_id="1" v_id="1">
+        <szamlazasi_cim>1122 Budapest, Fő utca 12.</szamlazasi_cim>
+        <orszag>Magyarország</orszag>
+        <reg_datum>2023-05-10</reg_datum>
+    </vendeg_profil>
+
+    <!-- Vendég profil 2 -->
+    <vendeg_profil vp_id="2">
+        <szamlazasi_cim>8600 Siófok, Part köz 5.</szamlazasi_cim>
+        <orszag>Magyarország</orszag>
+        <reg_datum>2024-01-22</reg_datum>
+    </vendeg_profil>
+
+
+    <!-- Foglalások -->
+
+    <!-- Foglalás 1 -->
+    <foglalas f_id="1" vp_id="1">
+        <erkezes>2025-02-10</erkezes>
+        <tavozas>2025-02-15</tavozas>
+        <allapot>
+            <fuggoben>false</fuggoben>
+            <lemondva>false</lemondva>
+            <jovahagyva>true</jovahagyva>
+        </allapot>
+    </foglalas>
+
+    <!-- Foglalás 2 -->
+    <foglalas f_id="2" vp_id="2">
+        <erkezes>2025-03-01</erkezes>
+        <tavozas>2025-03-05</tavozas>
+        <allapot>
+            <fuggoben>true</fuggoben>
+            <lemondva>false</lemondva>
+            <jovahagyva>false</jovahagyva>
+        </allapot>
+    </foglalas>
+</szallasfoglalas>

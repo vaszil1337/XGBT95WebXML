@@ -1,0 +1,224 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+
+    <!-- ========================================= -->
+    <!-- Egyszerű típusok -->
+    <!-- ========================================= -->
+
+    <xs:simpleType name="PozitivEgesz">
+        <xs:restriction base="xs:positiveInteger"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="PenzTipus">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Szoveg50">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="DatumTipus">
+        <xs:restriction base="xs:date"/>
+    </xs:simpleType>
+
+
+    <!-- ========================================= -->
+    <!-- Komplex típusok -->
+    <!-- ========================================= -->
+
+    <!-- Szolgáltatás -->
+    <xs:complexType name="SzolgaltatasTipus">
+        <xs:sequence>
+            <xs:element name="nev" type="Szoveg50"/>
+            <xs:element name="ar" type="PenzTipus"/>
+        </xs:sequence>
+        <xs:attribute name="szolg_id" type="PozitivEgesz" use="required"/>
+        <xs:attribute name="h_id" type="PozitivEgesz" use="required"/>
+    </xs:complexType>
+
+    <!-- Hotel -->
+    <xs:complexType name="HotelTipus">
+        <xs:sequence>
+            <xs:element name="nev" type="Szoveg50"/>
+            <xs:element name="varos" type="Szoveg50"/>
+            <xs:element name="telefonszam" type="xs:string"/>
+            <xs:element name="csillag" type="PozitivEgesz"/>
+        </xs:sequence>
+        <xs:attribute name="h_id" type="PozitivEgesz" use="required"/>
+    </xs:complexType>
+
+    <!-- Szoba -->
+    <xs:complexType name="SzobaTipus">
+        <xs:sequence>
+            <xs:element name="ferohely" type="PozitivEgesz"/>
+            <xs:element name="ar" type="PenzTipus"/>
+        </xs:sequence>
+        <xs:attribute name="s_id" type="PozitivEgesz" use="required"/>
+        <xs:attribute name="h_id" type="PozitivEgesz" use="required"/>
+        <xs:attribute name="f_id" type="PozitivEgesz" use="required"/>
+    </xs:complexType>
+
+    <!-- Szoba–vendég kapcsolat -->
+    <xs:complexType name="SzobaVendegKapcsolatTipus">
+        <xs:attribute name="s_id" type="PozitivEgesz" use="required"/>
+        <xs:attribute name="v_id" type="PozitivEgesz" use="required"/>
+    </xs:complexType>
+
+    <!-- Vendég -->
+    <xs:complexType name="VendegTipus">
+        <xs:sequence>
+            <xs:element name="nev" type="Szoveg50"/>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="telefon" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="v_id" type="PozitivEgesz" use="required"/>
+    </xs:complexType>
+
+    <!-- Vendég profil -->
+    <xs:complexType name="VendegProfilTipus">
+        <xs:sequence>
+            <xs:element name="szamlazasi_cim" type="xs:string"/>
+            <xs:element name="orszag" type="Szoveg50"/>
+            <xs:element name="reg_datum" type="DatumTipus"/>
+        </xs:sequence>
+        <xs:attribute name="vp_id" type="PozitivEgesz" use="required"/>
+        <xs:attribute name="v_id" type="PozitivEgesz"/>
+    </xs:complexType>
+
+    <!-- Foglalás állapot -->
+    <xs:complexType name="AllapotTipus">
+        <xs:sequence>
+            <xs:element name="fuggoben" type="xs:boolean"/>
+            <xs:element name="lemondva" type="xs:boolean"/>
+            <xs:element name="jovahagyva" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Foglalás -->
+    <xs:complexType name="FoglalasTipus">
+        <xs:sequence>
+            <xs:element name="erkezes" type="DatumTipus"/>
+            <xs:element name="tavozas" type="DatumTipus"/>
+            <xs:element name="allapot" type="AllapotTipus"/>
+        </xs:sequence>
+        <xs:attribute name="f_id" type="PozitivEgesz" use="required"/>
+        <xs:attribute name="vp_id" type="PozitivEgesz" use="required"/>
+    </xs:complexType>
+
+
+    <!-- ========================================= -->
+    <!-- Globális elemek a ref használatához -->
+    <!-- ========================================= -->
+
+    <xs:element name="hotel" type="HotelTipus"/>
+    <xs:element name="szolgaltatas" type="SzolgaltatasTipus"/>
+    <xs:element name="szoba" type="SzobaTipus"/>
+    <xs:element name="szoba-vendeg" type="SzobaVendegKapcsolatTipus"/>
+    <xs:element name="vendeg" type="VendegTipus"/>
+    <xs:element name="vendeg_profil" type="VendegProfilTipus"/>
+    <xs:element name="foglalas" type="FoglalasTipus"/>
+
+
+    <!-- ========================================= -->
+    <!-- Gyökérelem -->
+    <!-- ========================================= -->
+
+    <xs:element name="szallasfoglalas">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="szolgaltatas" maxOccurs="unbounded"/>
+                <xs:element ref="hotel" maxOccurs="unbounded"/>
+                <xs:element ref="szoba" maxOccurs="unbounded"/>
+                <xs:element ref="szoba-vendeg" maxOccurs="unbounded"/>
+                <xs:element ref="vendeg" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="vendeg_profil" maxOccurs="unbounded"/>
+                <xs:element ref="foglalas" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+
+        <!-- ========================================= -->
+        <!-- PK / FK kapcsolatok -->
+        <!-- ========================================= -->
+
+        <!-- HOTEL PK -->
+        <xs:key name="HotelPK">
+            <xs:selector xpath="hotel"/>
+            <xs:field xpath="@h_id"/>
+        </xs:key>
+
+        <!-- SZOLGALTATAS PK + FK HOTEL -->
+        <xs:key name="SzolgaltatasPK">
+            <xs:selector xpath="szolgaltatas"/>
+            <xs:field xpath="@szolg_id"/>
+        </xs:key>
+
+        <xs:keyref name="SzolgHotelFK" refer="HotelPK">
+            <xs:selector xpath="szolgaltatas"/>
+            <xs:field xpath="@h_id"/>
+        </xs:keyref>
+
+        <!-- SZOBA PK + FK HOTEL + FK FOGLALAS -->
+        <xs:key name="SzobaPK">
+            <xs:selector xpath="szoba"/>
+            <xs:field xpath="@s_id"/>
+        </xs:key>
+
+        <xs:keyref name="SzobaHotelFK" refer="HotelPK">
+            <xs:selector xpath="szoba"/>
+            <xs:field xpath="@h_id"/>
+        </xs:keyref>
+
+        <!-- FOGLALAS PK -->
+        <xs:key name="FoglalasPK">
+            <xs:selector xpath="foglalas"/>
+            <xs:field xpath="@f_id"/>
+        </xs:key>
+
+        <xs:keyref name="SzobaFoglalasFK" refer="FoglalasPK">
+            <xs:selector xpath="szoba"/>
+            <xs:field xpath="@f_id"/>
+        </xs:keyref>
+
+        <!-- VENDEG PK -->
+        <xs:key name="VendegPK">
+            <xs:selector xpath="vendeg"/>
+            <xs:field xpath="@v_id"/>
+        </xs:key>
+
+        <!-- VENDEG PROFIL PK + FK VENDEG -->
+        <xs:key name="VendegProfilPK">
+            <xs:selector xpath="vendeg_profil"/>
+            <xs:field xpath="@vp_id"/>
+        </xs:key>
+
+        <xs:keyref name="VenProVendegFK" refer="VendegPK">
+            <xs:selector xpath="foglalas"/>
+            <xs:field xpath="@vp_id"/>
+        </xs:keyref>
+
+        <!-- SZOBA–VENDEG KAPCSOLAT (kapcsolótábla) -->
+        <xs:key name="SzobaVendegKapcsPK">
+            <xs:selector xpath="szoba-vendeg"/>
+            <xs:field xpath="@s_id"/>
+            <xs:field xpath="@v_id"/>
+        </xs:key>
+
+        <xs:keyref name="SzobalinkFK" refer="SzobaPK">
+            <xs:selector xpath="szoba-vendeg"/>
+            <xs:field xpath="@s_id"/>
+        </xs:keyref>
+
+        <xs:keyref name="VendeglinkFK" refer="VendegPK">
+            <xs:selector xpath="szoba-vendeg"/>
+            <xs:field xpath="@v_id"/>
+        </xs:keyref>
+
+    </xs:element>
+
+</xs:schema>

@@ -3,7 +3,9 @@
 <!-- ============================== -->
 <!-- Szülő elem -->
 <!-- ============================== -->
-<szallasfoglalas>
+<szallasfoglalas
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="../XGBT95_XMLSchema.xsd">
 
     <!-- Szolgáltatások -->
 
@@ -27,6 +29,7 @@
         <nev>Napfény Hotel</nev>
         <varos>Budapest</varos>
         <telefonszam>+36 1 555 1122</telefonszam>
+        <telefonszam>+36 1 555 3344</telefonszam>
         <csillag>4</csillag>
     </hotel>
 
@@ -35,6 +38,7 @@
         <nev>Aranypart Resort</nev>
         <varos>Siófok</varos>
         <telefonszam>+36 84 333 777</telefonszam>
+        <telefonszam>+36 84 333 888</telefonszam>
         <csillag>5</csillag>
     </hotel>
 
@@ -83,14 +87,14 @@
     <!-- Vendég profilok -->
 
     <!-- Vendég profil 1 -->
-    <vendeg_profil vp_id="1">
+    <vendeg_profil vp_id="1" v_id="1">
         <szamlazasi_cim>1122 Budapest, Fő utca 12.</szamlazasi_cim>
         <orszag>Magyarország</orszag>
         <reg_datum>2023-05-10</reg_datum>
     </vendeg_profil>
 
     <!-- Vendég profil 2 -->
-    <vendeg_profil vp_id="2">
+    <vendeg_profil vp_id="2" v_id="2">
         <szamlazasi_cim>8600 Siófok, Part köz 5.</szamlazasi_cim>
         <orszag>Magyarország</orszag>
         <reg_datum>2024-01-22</reg_datum>

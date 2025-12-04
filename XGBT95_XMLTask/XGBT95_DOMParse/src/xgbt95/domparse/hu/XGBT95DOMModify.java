@@ -20,6 +20,7 @@ public class XGBT95DOMModify {
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(xmlFile);
             doc.getDocumentElement().normalize();
+            Node gyoker = doc.getDocumentElement();
 
             // ---------- 1. módosítás: hotel csillagszám ----------
             Element hotel1 = (Element) doc.getElementsByTagName("hotel").item(0);
@@ -39,7 +40,17 @@ public class XGBT95DOMModify {
             newServ.appendChild(nev);
             newServ.appendChild(ar);
 
-            doc.getDocumentElement().appendChild(newServ);
+            Comment komment = doc.createComment(" Szolgáltatás 3 ");
+            Text uresSor = doc.createTextNode("\n    ");
+
+            NodeList szolgList = doc.getElementsByTagName("szolgaltatas");
+            Node uSzolg = szolgList.item(szolgList.getLength() - 1);
+            Node kovNode = uSzolg.getNextSibling();
+            gyoker.insertBefore(uresSor, kovNode);
+            gyoker.insertBefore(komment, kovNode);
+            gyoker.insertBefore(uresSor.cloneNode(false), kovNode);
+            gyoker.insertBefore(newServ, kovNode);
+
             System.out.println("Új szolgáltatás hozzáadva (Parkolás).");
 
             // ---------- 3. módosítás: vendég email csere ----------
@@ -50,8 +61,9 @@ public class XGBT95DOMModify {
             // ---------- 4. módosítás: foglalás állapot ----------
             Element foglalas1 = (Element) doc.getElementsByTagName("foglalas").item(0);
             Element allapot = (Element) foglalas1.getElementsByTagName("allapot").item(0);
-            allapot.getElementsByTagName("fuggoben").item(0).setTextContent("false");
-            System.out.println("Foglalás #1 fuggoben értéke false-ra állítva.");
+            allapot.getElementsByTagName("lemondva").item(0).setTextContent("true");
+            allapot.getElementsByTagName("jovahagyva").item(0).setTextContent("false");
+            System.out.println("Foglalás #1 lemondva értéke true-ra állítva.");
 
             // ---------- módosított XML kiírása konzolra ----------
             TransformerFactory tf = TransformerFactory.newInstance();

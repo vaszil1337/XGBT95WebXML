@@ -1,94 +1,103 @@
+=== Szolgáltatások ===
 
-=== szolgaltatas ===
-h_id = 1
-szolg_id = 1
-  nev: Reggeli
-  ar: 3500
+Szolgáltatás ID: 1
+Hotel ID: 1
+Név: Reggeli
+Ár: 3500 Ft
 
-=== szolgaltatas ===
-h_id = 2
-szolg_id = 2
-  nev: Wellness belépő
-  ar: 8000
+Szolgáltatás ID: 2
+Hotel ID: 2
+Név: Wellness belépő
+Ár: 8000 Ft
 
-=== hotel ===
-h_id = 1
-  nev: Napfény Hotel
-  varos: Budapest
-  telefonszam: +36 1 555 1122
-  csillag: 4
 
-=== hotel ===
-h_id = 2
-  nev: Aranypart Resort
-  varos: Siófok
-  telefonszam: +36 84 333 777
-  csillag: 5
+=== Hotelek ===
 
-=== szoba ===
-f_id = 1
-h_id = 1
-s_id = 1
-  ferohely: 2
-  ar: 18000
+Hotel ID: 1
+Név: Napfény Hotel
+Város: Budapest
+Telefonszámok:
+  - +36 1 555 1122
+  - +36 1 555 3344
+Csillag: 4
 
-=== szoba ===
-f_id = 2
-h_id = 2
-s_id = 2
-  ferohely: 3
-  ar: 26000
+Hotel ID: 2
+Név: Aranypart Resort
+Város: Siófok
+Telefonszámok:
+  - +36 84 333 777
+  - +36 84 333 888
+Csillag: 5
 
-=== szoba-vendeg ===
-s_id = 1
-v_id = 1
 
-=== szoba-vendeg ===
-s_id = 2
-v_id = 2
+=== Szobák ===
 
-=== vendeg ===
-v_id = 1
-  nev: Nagy Péter
-  email: peter.nagy@email.hu
-  telefon: 06201234567
+Szoba ID: 1
+Hotel ID: 1
+Foglalás ID: 1
+Férőhely: 2
+Ár: 18000 Ft
 
-=== vendeg ===
-v_id = 2
-  nev: Kovács Anna
-  email: anna.kovacs@email.hu
-  telefon: 06203334455
+Szoba ID: 2
+Hotel ID: 2
+Foglalás ID: 2
+Férőhely: 3
+Ár: 26000 Ft
 
-=== vendeg_profil ===
-vp_id = 1
-  szamlazasi_cim: 1122 Budapest, Fő utca 12.
-  orszag: Magyarország
-  reg_datum: 2023-05-10
 
-=== vendeg_profil ===
-vp_id = 2
-  szamlazasi_cim: 8600 Siófok, Part köz 5.
-  orszag: Magyarország
-  reg_datum: 2024-01-22
+=== Szoba-Vendég kapcsolatok ===
 
-=== foglalas ===
-f_id = 1
-vp_id = 1
-  erkezes: 2025-02-10
-  tavozas: 2025-02-15
-  allapot: 
-            false
-            false
-            true
-        
+Szoba ID: 1
+Vendég ID: 1
 
-=== foglalas ===
-f_id = 2
-vp_id = 2
-  erkezes: 2025-03-01
-  tavozas: 2025-03-05
-  allapot: 
-            true
-            false
-            false
-        
+Szoba ID: 2
+Vendég ID: 2
+
+
+=== Vendégek ===
+
+Vendég ID: 1
+Név: Nagy Péter
+Email: peter.nagy@email.hu
+Telefon: 06201234567
+
+Vendég ID: 2
+Név: Kovács Anna
+Email: anna.kovacs@email.hu
+Telefon: 06203334455
+
+
+=== Vendég profilok ===
+
+Profil ID: 1
+Vendég ID: 1
+Számlázási cím: 1122 Budapest, Fő utca 12.
+Ország: Magyarország
+Regisztráció dátuma: 2023-05-10
+
+Profil ID: 2
+Vendég ID: 2
+Számlázási cím: 8600 Siófok, Part köz 5.
+Ország: Magyarország
+Regisztráció dátuma: 2024-01-22
+
+
+=== Foglalások ===
+
+Foglalás ID: 1
+Profil ID: 1
+Érkezés: 2025-02-10
+Távozás: 2025-02-15
+Allapot:
+  függőben: false
+  lemondva: false
+  jóváhagyva: true
+
+Foglalás ID: 2
+Profil ID: 2
+Érkezés: 2025-03-01
+Távozás: 2025-03-05
+Allapot:
+  függőben: true
+  lemondva: false
+  jóváhagyva: false
